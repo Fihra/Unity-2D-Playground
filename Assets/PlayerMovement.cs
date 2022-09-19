@@ -40,11 +40,17 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        if(Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
+        {
+            animator.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
+            animator.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
+        }
     }
 
     void Movement()
     {
-        Debug.Log(movement);
+        //Debug.Log(movement);
         //rb.AddForce(movement * speed * Time.fixedDeltaTime);
         rb.velocity = new Vector2(movement.x * speed, movement.y * speed);
     }
