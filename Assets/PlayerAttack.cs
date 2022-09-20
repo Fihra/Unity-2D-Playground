@@ -10,6 +10,15 @@ public class PlayerAttack : MonoBehaviour
     private float attackCounter = 0.25f;
     private bool isAttacking;
 
+    [SerializeField]
+    private float cooldownTime = 2f;
+    [SerializeField]
+    private float nextFireTime = 0f;
+    [SerializeField]
+    private static int numOfClicks = 0;
+    private float lastClickedTime = 0;
+    private float maxComboDelay = 1;
+
     // Start is called before the first frame update
     void Awake()
     {
