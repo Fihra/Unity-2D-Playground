@@ -7,7 +7,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private int health = 3;
 
-    BoxCollider2D triggerCollider;
+    private bool tempInvulnerable = false;
+    private BoxCollider2D triggerCollider;
 
     private void Awake()
     {
@@ -16,11 +17,13 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Enemy"))
+        //if !Invinisble
+        if (!tempInvulnerable && other.CompareTag("Enemy"))
         {
             Debug.Log(health);
             health--;
-            if (health < 1)
+            tempInvulnerable = true;
+            if (health < 0)
             {
                 //Destroy(gameObject);
                 gameObject.SetActive(false);
@@ -29,10 +32,11 @@ public class Player : MonoBehaviour
         }
     }
 
-    IEnumerator GetInvulnerable()
+    public IEnumerator GetInvulnerable()
     {
         triggerCollider.isTrigger = false;
         yield return new WaitForSeconds(2f);
         triggerCollider.isTrigger = true;
+        tempInvulnerable = false;
     }
 }
