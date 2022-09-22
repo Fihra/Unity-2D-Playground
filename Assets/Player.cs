@@ -10,33 +10,46 @@ public class Player : MonoBehaviour
     private bool tempInvulnerable = false;
     private BoxCollider2D triggerCollider;
 
+    private SpriteRenderer sprite;
+
     private void Awake()
     {
         triggerCollider = GetComponent<BoxCollider2D>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //if !Invinisble
-        if (!tempInvulnerable && other.CompareTag("Enemy"))
+        
+    }
+
+    public void LoseHealth()
+    {
+        
+        //if (tempInvulnerable) return;
+        if (!tempInvulnerable)
         {
-            Debug.Log(health);
             health--;
+            Debug.Log(health);
+            Debug.Log("Get Hurt");
             tempInvulnerable = true;
-            if (health < 0)
+            if (health < 1)
             {
-                //Destroy(gameObject);
+                Destroy(gameObject);
                 gameObject.SetActive(false);
             }
+
             StartCoroutine("GetInvulnerable");
         }
     }
 
     public IEnumerator GetInvulnerable()
     {
-        triggerCollider.isTrigger = false;
+        sprite.color = Color.red;
+        //triggerCollider.isTrigger = false;
         yield return new WaitForSeconds(2f);
-        triggerCollider.isTrigger = true;
+        //triggerCollider.isTrigger = true;
         tempInvulnerable = false;
+        sprite.color = Color.white;
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 206591875}
   m_Layer: 0
   m_Name: Hitbox_Up
-  m_TagString: Untagged
+  m_TagString: Hit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,7 +45,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.10202041, y: -0.3925192}
+  m_Offset: {x: -0.10202041, y: -0.16982889}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -56,7 +56,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7959592, y: 0.21496159}
+  m_Size: {x: 0.7959592, y: 0.6603422}
   m_EdgeRadius: 0
 --- !u!114 &206591875
 MonoBehaviour:
@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 566993096}
   m_Layer: 0
   m_Name: Hitbox_Left
-  m_TagString: Untagged
+  m_TagString: Hit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,7 +115,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.37522763, y: -0.37004012}
+  m_Offset: {x: -0.62266123, y: -0.37004012}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -126,7 +126,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.24954474, y: 0.7648343}
+  m_Size: {x: 0.74441206, y: 0.7648343}
   m_EdgeRadius: 0
 --- !u!114 &566993096
 MonoBehaviour:
@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 986729225}
   m_Layer: 0
   m_Name: Hitbox_Down
-  m_TagString: Untagged
+  m_TagString: Hit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -185,7 +185,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.10202041, y: -0.3925192}
+  m_Offset: {x: -0.10202041, y: -0.677068}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -196,7 +196,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7959592, y: 0.21496159}
+  m_Size: {x: 0.7959592, y: 0.78405905}
   m_EdgeRadius: 0
 --- !u!114 &986729225
 MonoBehaviour:
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 2023823226}
   m_Layer: 0
   m_Name: Hitbox_Right
-  m_TagString: Untagged
+  m_TagString: Hit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -255,7 +255,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.37522763, y: -0.37004012}
+  m_Offset: {x: -0.09067887, y: -0.37004012}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -266,7 +266,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.24954474, y: 0.7648343}
+  m_Size: {x: 0.81864226, y: 0.7648343}
   m_EdgeRadius: 0
 --- !u!114 &2023823226
 MonoBehaviour:
@@ -296,6 +296,7 @@ GameObject:
   - component: {fileID: 9218157874737215839}
   - component: {fileID: 9218157874737215838}
   - component: {fileID: 311477780}
+  - component: {fileID: 311477781}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -416,10 +417,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.030991167, y: -0.048945248}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -430,7 +431,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5165382, y: 0.6764108}
   m_EdgeRadius: 0
 --- !u!95 &9218157874737215839
 Animator:
@@ -478,3 +479,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+--- !u!114 &311477781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9218157874737215809}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fd665f5682ff954da4274330e98b0fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

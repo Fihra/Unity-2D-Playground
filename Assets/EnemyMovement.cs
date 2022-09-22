@@ -5,8 +5,6 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField]
-    private int health = 3;
-    [SerializeField]
     private float speed = 1.0f;
     //[SerializeField]
     //private float range = 3.0f;
@@ -29,13 +27,15 @@ public class EnemyMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float step = speed * Time.deltaTime;
 
         if(Vector3.Distance(playerPosition.position, transform.position) <= maxRange && Vector3.Distance(playerPosition.position, transform.position) >= minRange)
         {
             transform.position = Vector3.MoveTowards(transform.position, playerPosition.transform.position, step);
+            //rb.MovePosition(Vector3.MoveTowards(transform.position, playerPosition.transform.position, step));
+            //rb.velocity = Vector3.MoveTowards(transform.position, playerPosition.transform.position, step);
         }
 
         //if(Vector3.Distance(playerPosition.position, transform.position) <= range)
@@ -48,13 +48,20 @@ public class EnemyMovement : MonoBehaviour
         //rb.MovePosition(currentPos);
     }
 
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Hit"))
+        if(other.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            other.GetComponent<Player>().LoseHealth();
         }
 
-        
+        if (other.CompareTag("Hit"))
+        {
+            Debug.Log("Hit in Here");
+            Vector2 difference = transform.position - other.transform.position;
+            transform.position = new Vector2(transform.position.x + difference.x, transform.position.y + difference.y);
+
+        }
     }
 }

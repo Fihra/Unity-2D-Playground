@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HitEnemy : MonoBehaviour
+public class PlayerDamage : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,16 +16,13 @@ public class HitEnemy : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.CompareTag("Enemy"))
+        Debug.Log("Cmon");
+        if(other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Hit Enemy");
+            Debug.Log("Collided");
             Destroy(other.gameObject);
-            if (EnemySpawner.enemiesSpawned > 0)
-            {
-                EnemySpawner.enemiesSpawned--;
-            }
         }
     }
 }
