@@ -21,6 +21,9 @@ public class HitEnemy : MonoBehaviour
         if(other.CompareTag("Enemy"))
         {
             Debug.Log("Hit Enemy");
+            Vector2 difference = other.transform.position - transform.position;
+            other.transform.position = new Vector2(other.transform.position.x + difference.x, other.transform.position.y + difference.y);
+
             Destroy(other.gameObject);
             if (EnemySpawner.enemiesSpawned > 0)
             {
